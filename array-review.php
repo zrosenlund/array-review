@@ -22,4 +22,20 @@ function printArray() {
     echo '</p>';
 }
 
+function addAnimal($string) {
+    global $animals;
+
+    if (!in_array(strtolower($string), $animals))
+    {
+        array_push($animals, strtolower($string));
+    }
+
+    echo "<p>adding  $string...</p>";
+    printArray();
+}
+
+echo '<h2>Part I</h2>';
+
 printArray();
+addAnimal('goat');
+addAnimal('Boa');
